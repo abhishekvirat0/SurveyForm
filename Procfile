@@ -1,1 +1,1 @@
-web: gunicorn cjapp.wsgi --log-file -
+web: gunicorn surveyApp.wsgi --log-file -
