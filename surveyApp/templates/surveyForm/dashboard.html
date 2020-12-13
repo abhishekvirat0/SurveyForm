@@ -203,7 +203,7 @@
                       </div>
 
                         <div class="col-md-6 col-12">
-                        <div class="card" style="border-radius: 25px; border: solid 2px; border-color: #e0e0e0; background: #fff;">
+                        <div class="card" style="border-radius: 25px; border: solid 2px; border-color: #e0e0e0; background: #fff; ">
                           <div  class="card-content" >
                             <div class="card-body">
                                 <h3 style="color: #000;">Diet Ratio</h3>
@@ -228,6 +228,33 @@
                         </div>
                       </div>
                   </div>
+
+                                              <div class="col-md-12">
+                                            <table class="table" width="100%">
+
+                                                <tr>
+                                                    <td><b>First Name</b></td>
+                                                    <td align="right"><b>Last Name</b></td>
+                                                    <td align="right"><b>Age</b></td>
+                                                    <td align="right"><b>Gender</b></td>
+                                                    <td align="right"><b>Relationship status</b></td>
+                                                    <td align="right"><b>Employment status</b></td>
+                                                    <td align="right"><b>Diet</b></td>
+                                                </tr>
+
+                                                {% for item in query_results %}
+                                                <tr>
+                                                    <td>{{ item.name }}</td>
+                                                    <td align="right">{{ item.l_name }}</td>
+                                                    <td align="right">{{ item.age }}</td>
+                                                    <td align="right">{{ item.gender }}</td>
+                                                    <td align="right">{{ item.relation }}</td>
+                                                    <td align="right">{{ item.employment }}</td>
+                                                    <td align="right">{{ item.diet }}</td>
+                                                </tr>
+                                                {% endfor %}
+                                            </table>
+                                        </div>
 
 </section>
 </div>
@@ -278,10 +305,5 @@
 
   </script>
 
-<script>
-
-
-
-  </script>
 
 {% endblock %}

@@ -51,6 +51,7 @@ class Survey_Create_View(View):
 class Survey_Dashboard(View):
 
     def get(self, request):
+        query_results = Survey_Form.objects.all()
         labels = ['Married', 'UnMarried', 'Divorced', 'Widowed']
         data = []
 
@@ -83,4 +84,4 @@ class Survey_Dashboard(View):
                        'employed_count': employed_count, 'married_count': married_count,
                        'vegetarian_count': vegetarian_count, 'labels': labels,
                        'data': data, 'labels2': labels2,
-                       'data2': data2})
+                       'data2': data2,'query_results':query_results})

@@ -24,13 +24,27 @@
 .card{
     transition:.3s;
 }
-.card:hover,
-.card:focus,
-.card:active {
+.card1:hover,
+.card1:focus,
+.card1:active,
+.card2:hover,
+.card2:focus,
+.card2:active,
+.card3:hover,
+.card3:focus,
+.card3:active,
+.card4:hover,
+.card4:focus,
+.card4:active,
+.card5:hover,
+.card5:focus,
+.card5:active,
+.card6:hover,
+.card6:focus,
+.card6:active {
     box-shadow: 0 0 11px rgba(33,33,33,.2);
     opacity: 1;
-
-     transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
 }
 
 .card1{
