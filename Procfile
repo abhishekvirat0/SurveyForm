@@ -1,0 +1,1 @@
+web: gunicorn cjapp.wsgi --log-file -

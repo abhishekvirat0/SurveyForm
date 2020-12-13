@@ -1,0 +1,76 @@
+
+.body1 {
+  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #000000;
+}
+
+.header{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 250%;
+    line-height: 54px;
+    color: #000000;
+}
+
+.textC{
+    -webkit-text-stroke:medium;
+    text-align:center;
+    items-align:center;
+}
+
+.card{
+    transition:.3s;
+}
+.card:hover,
+.card:focus,
+.card:active {
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+    opacity: 1;
+
+     transform: scale(1.1, 1.1);
+}
+
+.card1{
+border-radius: 25px;
+background: url("/static/img/black.png");
+background-size: cover;
+color:#fff;
+}
+
+.card2{
+border-radius: 25px;
+background: url("/static/img/pink.png");
+background-size: cover;
+color:#fff;
+}
+
+.card3{
+border-radius: 25px;
+background: url("/static/img/green.png");
+background-size: cover;
+color:#fff;
+}
+
+.card4{
+border-radius: 25px;
+background: url("/static/img/blue.png");
+background-size: cover;
+color:#fff;
+}
+
+.card5{
+border-radius: 25px;
+background: url("/static/img/purple.png");
+background-size: cover;
+color:#fff;
+}
+
+.card6{
+border-radius: 25px;
+background: url("/static/img/orange.png");
+background-size: cover;
+color:#fff;
+}

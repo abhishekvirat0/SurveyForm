@@ -1,0 +1,244 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<body>
+<div class="page-wrapper bg-gra-02 p-t-100 p-b-100 font-poppins ">
+
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                {% include 'partials/_flash_messages.html' %}
+                <div class="card-body">
+                    <div class="row row-space">
+                    <h2 class="title">Survey Form</h2>
+                    <a style="color:black;" href="/dashboard/">Dashboard</a>
+                    </div>
+                    <form action="{% url 'survey' %}" method="post">
+                        {% csrf_token %}
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">First name</label>
+                                    <input class="input--style-4 form-control" type="text" name="name" value="{{data.name}}" required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Last name</label>
+                                    <input class="input--style-4 form-control" type="text" name="l_name" value="{{data.l_name}}" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Age</label>
+                                    <input required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="input--style-4 form-control" type="text" name="age" value="{{data.age}}">
+                                </div>
+                            </div>
+
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Gender</label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Male
+                                            <input type="radio" id='male' name="gender" value="Male">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">Female
+                                            <input type="radio" name="gender" id='female' value="Female">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Relationship status</label>
+                                    <div >
+                                        <select name="relation" class="rs-select2 js-select-simple select--no-search form-control" required>
+                                            <option value="" disabled="disabled" selected="selected">Choose option</option>
+                                            <option value="Married">Married</option>
+                                            <option value="UnMarried">UnMarried</option>
+                                            <option value="Divorced">Divorced</option>
+                                            <option value="Widowed">Widowed</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Employment status</label>
+                                    <div >
+                                        <select name="employment" class="rs-select2 js-select-simple select--no-search form-control" required>
+                                            <option value="" disabled="disabled" selected="selected">Choose option</option>
+                                            <option value="Employed">Employed</option>
+                                            <option value="UnEmployed">UnEmployed</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Pregnancy status</label>
+                                    <div >
+                                        <select id="pregnant" name="pregnancy" class="rs-select2 js-select-simple select--no-search form-control" required>
+                                            <option value="" disabled="disabled" selected="selected">Choose option</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Diet Preference</label>
+                                    <div >
+                                        <select name="diet" class="rs-select2 js-select-simple select--no-search form-control" required>
+                                            <option value="" disabled="disabled" selected="selected">Choose option</option>
+                                            <option value="Vegetarian">Vegetarian</option>
+                                            <option value="Non-Vegetarian">Non-Vegetarian</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="label">
+                            <h4>Food Preference</h4>
+                        </div>
+
+                        <div class="row row-space">
+
+                            <div class="col-1">
+                                <div class="input-group">
+                                    <label class="label">First Preference</label>
+                                    <div >
+                                        <select name="first_food" class="rs-select2 js-select-simple select--no-search form-control" required>
+                                            <option value="" disabled="disabled" selected="selected">Choose option</option>
+                                            <option value="Bajra">Bajra</option>
+                                            <option value="Ragi">Ragi</option>
+                                            <option value="Rice">Rice</option>
+                                            <option value="Jowar">Jowar</option>
+                                            <option value="Wheat">Wheat</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-1">
+                                <div class="input-group">
+                                    <label class="label">Second Preference</label>
+                                    <div >
+                                        <select name="second_food" class="rs-select2 js-select-simple select--no-search form-control" required>
+                                            <option value="" disabled="disabled" selected="selected">Choose option</option>
+                                            <option value="Bajra">Bajra</option>
+                                            <option value="Ragi">Ragi</option>
+                                            <option value="Rice">Rice</option>
+                                            <option value="Jowar">Jowar</option>
+                                            <option value="Wheat">Wheat</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-1">
+                                <div class="input-group">
+                                    <label class="label">Third Preference</label>
+                                    <div >
+                                        <select name="third_food" class="rs-select2 js-select-simple select--no-search form-control" required>
+                                            <option value="" disabled="disabled" selected="selected">Choose option</option>
+                                            <option value="Bajra">Bajra</option>
+                                            <option value="Ragi">Ragi</option>
+                                            <option value="Rice">Rice</option>
+                                            <option value="Jowar">Jowar</option>
+                                            <option value="Wheat">Wheat</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Fourth Preference</label>
+                                    <div >
+                                        <select name="fourth_food" class="rs-select2 js-select-simple select--no-search form-control" required>
+                                            <option value="" disabled="disabled" selected="selected">Choose option</option>
+                                            <option value="Bajra">Bajra</option>
+                                            <option value="Ragi">Ragi</option>
+                                            <option value="Rice">Rice</option>
+                                            <option value="Jowar">Jowar</option>
+                                            <option value="Wheat">Wheat</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Fifth Preference</label>
+                                    <div >
+                                        <select name="fifth_food" class="rs-select2 js-select-simple select--no-search form-control" required>
+                                            <option value="" disabled="disabled" selected="selected">Choose option</option>
+                                            <option value="Bajra">Bajra</option>
+                                            <option value="Ragi">Ragi</option>
+                                            <option value="Rice">Rice</option>
+                                            <option value="Jowar">Jowar</option>
+                                            <option value="Wheat">Wheat</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label class="label">Rating</label>
+                            <input type="range" min="1" max="10" value="1" class="slider" name="rating" >
+                        </div>
+
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <label class="label">1</label>
+                            </div>
+                            <div class="col-2" style="text-align:right; ">
+                                <p class="label">10</p>
+                            </div>
+                        </div>
+
+
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue submitbutton" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+$("#male").click(function() {
+    $("#pregnant").attr("disabled", true);
+});
+
+$("#female").click(function() {
+    $("#pregnant").attr("disabled", false);
+});
+</script>
+
+{% endblock %}
